@@ -18,17 +18,17 @@ export default function InnovationSection() {
     ];
 
     return (
-        <section className="py-24 bg-[url('/images/home/technology-bg.png')] bg-cover bg-center relative overflow-hidden">
+        <section className="py-22 bg-[url('/images/home/technology-bg.png')] bg-cover bg-center relative overflow-hidden">
 
 
             <div className="container mx-auto px-4 relative z-10 flex flex-col items-center">
-                <div className="flex items-center gap-2 mb-4 opacity-60">
-                    <span className="text-primary">
-                        <svg className="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="4" strokeLinecap="round">
+                <div className="flex items-center justify-center gap-3 mb-6">
+                    <div className="text-white">
+                        <svg className="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round">
                             <path d="M12 3v18M3 12h18M5.6 5.6l12.8 12.8M18.4 5.6L5.6 18.4" />
                         </svg>
-                    </span>
-                    <span className="text-xs font-bold text-white! uppercase tracking-widest">Technology Excellence</span>
+                    </div>
+                    <span className="text-2xl md:text-3xl font-bold text-white leading-tight">Technology Excellence</span>
                 </div>
 
                 <h2 className="text-2xl md:text-3xl font-bold text-white mb-12 text-center max-w-4xl leading-tight">
@@ -38,7 +38,7 @@ export default function InnovationSection() {
                 <div className="flex flex-col lg:flex-row gap-16 items-center w-full">
                     {/* Items List */}
                     <div className="lg:w-1/2 flex flex-col gap-6" data-aos="fade-right">
-                        <p className="text-white text-sm mb-6 leading-relaxed ">
+                        <p className="text-white text-sm mb-4 leading-relaxed ">
                             We deliver leading and innovative technology solutions by continuously advancing our research and development capabilities. Through in-depth analysis of emerging healthcare trends, and cutting-edge technologies, we create forward-thinking solutions that set new industry standards.
                         </p>
 
@@ -48,8 +48,8 @@ export default function InnovationSection() {
                                     <img src={item.img} alt={item.title} className="w-full h-full object-cover" />
                                 </div>
                                 <div className="flex flex-col justify-center">
-                                    <h3 className="text-sm font-bold text-gray-900 mb-2 group-hover:text-primary transition-colors">{item.title}</h3>
-                                    <p className="text-[11px] text-gray-500 leading-relaxed font-medium">{item.description}</p>
+                                    <h3 className="text-lg font-bold text-gray-900 mb-2 group-hover:text-primary transition-colors">{item.title}</h3>
+                                    <p className="text-[11px] leading-relaxed font-medium">{item.description}</p>
                                 </div>
                             </div>
                         ))}

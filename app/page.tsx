@@ -1,7 +1,8 @@
 import Header from "./components/Header";
 import Hero from "./components/Hero";
 import AboutSection from "./components/AboutSection";
-import ProductsSection from "./components/ProductsSection";
+import EquipmentSection from "./components/EquipmentSection";
+import ProductCatalog from "./components/ProductCatalog";
 import SuccessSection from "./components/SuccessSection";
 import InnovationSection from "./components/InnovationSection";
 import NewsSection from "./components/NewsSection";
@@ -13,8 +14,9 @@ export default function Home() {
     <main className="min-h-screen bg-white">
       <Header />
       <Hero />
+      <ProductCatalog />
       <AboutSection />
-      <ProductsSection />
+      <EquipmentSection />
       <SuccessSection />
       <InnovationSection />
       <NewsSection />
@@ -23,3 +25,4 @@ export default function Home() {
     </main>
   );
 }
+

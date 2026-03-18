@@ -33,11 +33,11 @@ export default function Button({
     const baseStyles = "inline-flex items-center justify-center font-bold tracking-wide transition-all duration-300 active:scale-95 cursor-pointer disabled:opacity-50 disabled:pointer-events-none";
 
     const variants = {
-        primary: "bg-[#3dc4d9] text-white hover:bg-[#34b1c5] shadow-lg shadow-[#3dc4d9]/20 border-transparent",
+        primary: "bg-[#3183C0] text-white hover:bg-[#296EA1] shadow-lg shadow-[#3183C0]/20 border-transparent",
         outline: "border-2 border-white/40 text-white hover:bg-white hover:text-primary backdrop-blur-md",
-        white: "bg-white text-primary hover:bg-[#3dc4d9] hover:text-white shadow-xl shadow-black/5",
-        ghost: "bg-transparent text-[#3dc4d9] hover:bg-[#3dc4d9]/10 border-transparent",
-        light: "bg-[#3dc4d9]/10 text-primary hover:bg-[#3dc4d9]/20 border-transparent",
+        white: "bg-white text-primary hover:bg-[#3183C0] hover:text-white shadow-xl shadow-black/5",
+        ghost: "bg-transparent text-[#3183C0] hover:bg-[#3183C0]/10 border-transparent",
+        light: "bg-[#3183C0]/10 text-primary hover:bg-[#3183C0]/20 border-transparent",
         dark: "bg-[#111827] text-white hover:bg-gray-800 border-transparent",
     };
 

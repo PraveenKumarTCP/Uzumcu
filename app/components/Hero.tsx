@@ -1,12 +1,6 @@
 "use client";
 
 import React, { useState } from "react";
-import { Swiper, SwiperSlide } from "swiper/react";
-import { Navigation, Pagination, Autoplay, EffectFade } from "swiper/modules";
-import "swiper/css";
-import "swiper/css/navigation";
-import "swiper/css/pagination";
-import "swiper/css/effect-fade";
 import { motion } from "framer-motion";
 
 const bannerVideos = [
@@ -16,23 +10,10 @@ const bannerVideos = [
     "https://cdn.clinicalvisuals.com/siteImages/bytech/bytec_04.webm",
 ];
 
-const slides = [
-    {
-        id: 1,
-        title: "Mobile Platforms, you can count on.",
-        description: "Bytec Healthcare's medical mobile workstations are engineered to meet the demanding needs of modern healthcare environments.",
-    },
-    {
-        id: 2,
-        title: "Efficiency Meets Intelligence",
-        description: "Introducing the TSI OmniTrak™ Solution – make your job easier wirelessly connecting modules to help improve indoor space conditions.",
-    },
-    {
-        id: 3,
-        title: "Stay Safe In the Face of Wildfire Smoke",
-        description: "Wildfires occurring in the wildland-urban interface present a major health hazard for local communities not only outside but also inside buildings.",
-    }
-];
+const heroContent = {
+    title: "Innovative Operating Room Solutions by Üzümcü",
+    description: "Üzümcü is a global manufacturer of operating room equipment and medical gas systems with over 50 years of experience,\n providing innovative and reliable healthcare solutions to hospitals in more than 100 countries",
+};
 
 export default function Hero() {
     const [currentVideoIndex, setCurrentVideoIndex] = useState(0);
@@ -43,7 +24,7 @@ export default function Hero() {
 
     return (
         <section
-            className="relative w-full overflow-hidden flex items-center justify-center h-screen bg-black"
+            className="relative w-full h-screen overflow-hidden flex items-center justify-center bg-black"
         >
             <div className="absolute inset-0 z-0">
                 <video
@@ -57,78 +38,29 @@ export default function Hero() {
                 ></video>
             </div>
 
-            {/* Hero Swiper */}
-            <Swiper
-                modules={[Navigation, Pagination, Autoplay, EffectFade]}
-                effect="fade"
-                loop={true}
-                speed={1000}
-                autoplay={{ delay: 5000, disableOnInteraction: false }}
-                pagination={{ clickable: true, el: '.custom-pagination' }}
-                className="h-full w-full z-20"
-            >
-                {slides.map((slide) => (
-                    <SwiperSlide key={slide.id}>
-                        {({ isActive }) => (
-                            <div className="container mx-auto px-4 flex flex-col justify-end h-full w-full text-center text-white pb-36">
-                                <div className="relative max-w-4xl mx-auto z-20 text-shadow-xl">
-                                    <motion.h1
-                                        initial={{ opacity: 0, y: 10 }}
-                                        animate={isActive ? { opacity: 1, y: 0 } : { opacity: 0, y: 10 }}
-                                        transition={{ duration: 0.8 }}
-                                        className="text-2xl md:text-4xl font-bold leading-tight mb-4"
-                                    >
-                                        {slide.title}
-                                    </motion.h1>
-                                    <motion.p
-                                        initial={{ opacity: 0, y: 10 }}
-                                        animate={isActive ? { opacity: 1, y: 0 } : { opacity: 0, y: 10 }}
-                                        transition={{ duration: 0.8, delay: 0.2 }}
-                                        className="text-xs md:text-sm lg:text-base font-light opacity-90 max-w-2xl mx-auto leading-relaxed drop-shadow-md"
-                                    >
-                                        {slide.description}
-                                    </motion.p>
-                                </div>
-                            </div>
-                        )}
-                    </SwiperSlide>
-                ))}
-
-                {/* Custom Pagination centered below description */}
-                <div className="custom-pagination"></div>
-            </Swiper>
-
-            <style jsx global>{`
-                .custom-pagination {
-                    position: absolute !important;
-                    bottom: 6rem !important;
-                    left: 0 !important;
-                    width: 100% !important;
-                    display: flex !important;
-                    justify-content: center !important;
-                    z-index: 30 !important;
-                }
-                
-                @media (max-width: 768px) {
-                    .custom-pagination {
-                        bottom: 5rem !important;
-                    }
-                }
-                .custom-pagination .swiper-pagination-bullet {
-                    width: 6px;
-                    height: 6px;
-                    background: rgba(255, 255, 255, 0.4);
-                    opacity: 1;
-                    border-radius: 50%;
-                    transition: all 0.3s ease;
-                    margin: 0 5px !important;
-                    cursor: pointer;
-                }
-                .custom-pagination .swiper-pagination-bullet-active {
-                    background: #ffffff;
-                    width: 6px;
-                }
-            `}</style>
+            {/* Hero Content */}
+            <div className="absolute inset-0 z-20 pointer-events-none">
+                <div className="container mx-auto px-4 flex flex-col justify-end h-full w-full text-center text-white pb-24">
+                    <div className="relative mx-auto z-20 text-shadow-xl pointer-events-auto">
+                        <motion.h1
+                            initial={{ opacity: 0, y: 10 }}
+                            animate={{ opacity: 1, y: 0 }}
+                            transition={{ duration: 0.8 }}
+                            className="text-2xl md:text-4xl font-bold leading-tight mb-4"
+                        >
+                            {heroContent.title}
+                        </motion.h1>
+                        <motion.p
+                            initial={{ opacity: 0, y: 10 }}
+                            animate={{ opacity: 1, y: 0 }}
+                            transition={{ duration: 0.8, delay: 0.2 }}
+                            className="text-xs md:text-md lg:text-lg! font-normal opacity-90 max-w-6xl mx-auto leading-relaxed drop-shadow-md"
+                        >
+                            {heroContent.description}
+                        </motion.p>
+                    </div>
+                </div>
+            </div>
         </section >
     );
 }
